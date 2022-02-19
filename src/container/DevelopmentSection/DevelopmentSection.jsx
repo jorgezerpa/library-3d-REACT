@@ -3,7 +3,7 @@ import Section from '../../components/Section/Section';
 
 const DevelopmentSection = ({books}) => {
   return (
-    <Section books={books} sectionName='New'></Section>
+    <Section books={books} sectionName='Development'></Section>
   )
 }
 

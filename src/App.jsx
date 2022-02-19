@@ -20,10 +20,11 @@ import './styles.css'
             //context
 export const SearchBarContext = React.createContext();
 
-
 const App = () => {
-
+  
+  const [result, setResult] = useState([]);
   const [showSearch, setShowSearch] = useState(false);
+  const [searchBarLength, setSearchBarLength] = useState(0)
 
   const showSearchSection = () => {
     setShowSearch(prev => !prev);
@@ -51,7 +52,7 @@ const App = () => {
   
 
   return (
-    <SearchBarContext.Provider value={showSearch}>
+    <SearchBarContext.Provider value={{showSearch, setShowSearch, result, setResult, searchBarLength, setSearchBarLength}}>
             <BrowserRouter>
                 <Header />
             <Routes>

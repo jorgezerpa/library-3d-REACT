@@ -1,4 +1,5 @@
-import React,{useState} from 'react';
+import React,{useState, useContext} from 'react';
+import { SearchBarContext } from '../../App';
 
 import useStyles from './styles';
 
@@ -8,16 +9,19 @@ import getBookService from '../../Services/getBooksService';
 
 const SearchBar = () => {
     const classes = useStyles();
-    const [result, setResult] = useState([])
+    
+    const context = useContext(SearchBarContext);
 
   const search = async (value) => {
-    getBookService.getSearchedBooks(setResult, value )
-    console.log(result);
+    getBookService.getSearchedBooks(context.setResult, value )
   } 
 
   return (
     <input
-    onChange={(e)=>{search(e.target.value)}} 
+    onChange={(e)=>{
+      search(e.target.value);
+      context.setSearchBarLength(e.target.value.length);
+    }} 
      className={classes.searchInput} placeholder='search'></input>
   )
 }

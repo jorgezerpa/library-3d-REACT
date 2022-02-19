@@ -4,7 +4,7 @@ import Section from '../../components/Section/Section';
 
 const BackendSection = ({books}) => {
   return (
-  <Section books={books} sectionName='New'></Section>
+  <Section books={books} sectionName='Backend'></Section>
   )
 }
 

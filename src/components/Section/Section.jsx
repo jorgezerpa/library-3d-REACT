@@ -15,7 +15,7 @@ const Section = ({books, sectionName}) => {
     <Typography variant='h5' style={{marginBottom:'20px'}}>{sectionName}</Typography>
     <Grid spacing={2} container justifyContent='space-around'>
         {
-        books.map((book)=>(
+        books && books.map((book)=>(
                 <Grid item key={book.isbn13}>
                     <Card className={classes.card} style={{maxWidth:'350px',padding:'5px 40px', display:'flex', justifyContent:'center', gap:'10px' }}>
                         <Book url={book.image} id={book.isbn13}/>

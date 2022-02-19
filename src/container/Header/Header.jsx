@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { SearchBarContext } from '../../App';
+
 import { Link } from 'react-router-dom';
 
-import { Grid, AppBar, Toolbar, Typography, TextField } from '@material-ui/core';
+import { Grid, AppBar, Toolbar, Typography } from '@material-ui/core';
 
 import SearchBar from '../../components/SearchBar/SearchBar';
+import Section from '../../components/Section/Section';
 
 import useStyles from './styles';
 
@@ -12,6 +15,7 @@ import useStyles from './styles';
 const NavBar = ()=>{
     const classes=useStyles();
 
+    
     return (
             <Toolbar>
                 <Grid container justifyContent='center' spacing={2} >
@@ -31,10 +35,11 @@ const NavBar = ()=>{
 
 const Header = () => {
     const classes=useStyles();
-
-  return (
+    const context = useContext(SearchBarContext);
+    
+    return (
     <header className={classes.header}>
-        <AppBar className={classes.appBar} position='relative' style={{zIndex: '10'}}>
+        <AppBar onClick={()=>context.setShowSearch(!context.showSearch)} className={classes.appBar} position='relative' style={{zIndex: '10'}}>
                 <Grid container className={classes.gridContainer}>
                     <Grid item xs={1}>
                         <Typography>LOGO</Typography>
@@ -46,6 +51,9 @@ const Header = () => {
 
                 <NavBar />
         </AppBar>
+
+                        {/* //pass a section component and render the info-----how to pass info here? */}
+        { context.showSearch && context.searchBarLength>0 && <Section books={context.result} sectionName='"search results"'  />}
     </header>
   )
 }

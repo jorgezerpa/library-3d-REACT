@@ -4,7 +4,7 @@ import React from 'react'
 
 const BeginnerSection = ({books}) => {
   return (
-      <Section books={books} sectionName='New'></Section>
+      <Section books={books} sectionName='Beginner'></Section>
   )
 }
 
