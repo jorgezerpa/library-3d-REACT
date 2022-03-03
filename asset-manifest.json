@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/library-3d-REACT/static/css/main.bb20a262.css",
+    "main.js": "/library-3d-REACT/static/js/main.29c515f6.js",
+    "index.html": "/library-3d-REACT/index.html",
+    "main.bb20a262.css.map": "/library-3d-REACT/static/css/main.bb20a262.css.map",
+    "main.29c515f6.js.map": "/library-3d-REACT/static/js/main.29c515f6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bb20a262.css",
+    "static/js/main.29c515f6.js"
+  ]
+}
